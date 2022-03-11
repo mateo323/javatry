@@ -38,6 +38,7 @@ public class Step01VariableTest extends PlainTestCase {
     public void test_variable_basic() { // example, so begin from the next method
         String sea = "mystic";
         log(sea); // your answer? => mystic
+        // TODO yuukimatsuo testtesttest (2022/03/11)
     }
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
@@ -47,7 +48,7 @@ public class Step01VariableTest extends PlainTestCase {
         String piari = null;
         String dstore = "mai";
         sea = sea + land + piari + ":" + dstore;
-        log(sea); // your answer? => 
+        log(sea); // your answer? =>mystic8:mai
     }
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
