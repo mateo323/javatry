@@ -173,13 +173,13 @@ public class Step01VariableTest extends PlainTestCase {
         StringBuilder sea = new StringBuilder("harbor");
         int land = 415;
         helpMethodArgumentVariable(sea, land);
-        log(sea); // your answer? => 
+        log(sea); // your answer? => habor416
     }
 
     private void helpMethodArgumentVariable(StringBuilder sea, int land) {
-        ++land;
+        ++land;//416
         String seaStr = sea.toString(); // is "harbor"
-        sea = new StringBuilder(seaStr).append(land);
+        sea = new StringBuilder(seaStr).append(land);//harbor416...?
     }
 
     // ===================================================================================
