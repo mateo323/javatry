@@ -58,7 +58,9 @@ public class Step01VariableTest extends PlainTestCase {
         String land = "oneman";
         sea = land;
         land = land + "'s dreams";
-        log(sea); // your answer? => 
+        log(sea); // your answer? => oneman(o)
+        // TODO TODOって_TODOの後どのキーを押すんでしたっけ。。。？(2022/05/13)
+        // TODO 実行はCtrl+0 (2022/05/13)
     }
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
@@ -67,17 +69,18 @@ public class Step01VariableTest extends PlainTestCase {
         int land = 415;
         sea = land;
         land++;
-        log(sea); // your answer? => 
+        log(sea); // your answer? => 94(o)
     }
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
     public void test_variable_reassigned_BigDecimal() {
         BigDecimal sea = new BigDecimal(94);
         BigDecimal land = new BigDecimal(415);
-        sea = land;
-        sea = land.add(new BigDecimal(1));
-        sea.add(new BigDecimal(1));
-        log(sea); // your answer? => 
+        sea = land; //415
+        sea = land.add(new BigDecimal(1)); //415+1
+        sea.add(new BigDecimal(1)); //416+1
+        log(sea); // your answer? => 417(x) 
+        // TODO 。。。？(2022/05/13)
     }
 
     // ===================================================================================
