@@ -77,9 +77,9 @@ public class Step01VariableTest extends PlainTestCase {
         BigDecimal sea = new BigDecimal(94);
         BigDecimal land = new BigDecimal(415);
         sea = land; //415
-        sea = land.add(new BigDecimal(1)); //415+1
+        sea = land.add(new BigDecimal(1)); //416
         sea.add(new BigDecimal(1)); //416+1
-        log(sea); // your answer? => 417(x) 
+        log(sea); // your answer? => 417(x) =>416(o)
         // TODO 。。。？(2022/05/13)
     }
 
@@ -94,19 +94,21 @@ public class Step01VariableTest extends PlainTestCase {
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
     public void test_variable_instance_variable_default_String() {
         String sea = instanceBroadway;
-        log(sea); // your answer? => 
+        log(sea); // your answer? => instanceBroadway(x) => null(o)
+        // #89見てなかった＋JAVAは文字列""で囲まないのかなと邪推した(2022/05/13)
     }
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
     public void test_variable_instance_variable_default_int() {
         int sea = instanceDockside;
-        log(sea); // your answer? => 
+        log(sea); // your answer? => null(x)=>0(o)
+        // intだと0なんですね、、(2022/05/13)
     }
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
     public void test_variable_instance_variable_default_Integer() {
         Integer sea = instanceHangar;
-        log(sea); // your answer? => 
+        log(sea); // your answer? => null(o)
     }
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
@@ -115,13 +117,15 @@ public class Step01VariableTest extends PlainTestCase {
         instanceMagiclamp = "magician";
         helpInstanceVariableViaMethod(instanceMagiclamp);
         String sea = instanceBroadway + "|" + instanceDockside + "|" + instanceHangar + "|" + instanceMagiclamp;
-        log(sea); // your answer? => 
+        log(sea); // your answer? => bigband|1|null|burn(x) => bigband|1|null|magician(o)
+        // なるほど。。(2022/05/13)
     }
 
     private void helpInstanceVariableViaMethod(String instanceMagiclamp) {
         instanceBroadway = "bigband";
         ++instanceDockside;
         instanceMagiclamp = "burn";
+        // TODO ↑この関数内でlogしてたらburnですか？(2022/05/13)
     }
 
     // ===================================================================================
@@ -135,13 +139,14 @@ public class Step01VariableTest extends PlainTestCase {
         String sea = "harbor";
         int land = 415;
         helpMethodArgumentImmutableMethodcall(sea, land);
-        log(sea); // your answer? => 
+        log(sea); // your answer? => harbor(o)
+        //少し掴めてきた気がする
     }
 
     private void helpMethodArgumentImmutableMethodcall(String sea, int land) {
-        ++land;
+        ++land;//416
         String landStr = String.valueOf(land); // is "416"
-        sea.concat(landStr);
+        sea.concat(landStr); //harbor416
     }
 
     // -----------------------------------------------------
@@ -152,7 +157,7 @@ public class Step01VariableTest extends PlainTestCase {
         StringBuilder sea = new StringBuilder("harbor");
         int land = 415;
         helpMethodArgumentMethodcall(sea, land);
-        log(sea); // your answer? => 
+        log(sea); // your answer? => harbor416(o)
     }
 
     private void helpMethodArgumentMethodcall(StringBuilder sea, int land) {
