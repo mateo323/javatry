@@ -38,7 +38,7 @@ public class Step01VariableTest extends PlainTestCase {
     public void test_variable_basic() { // example, so begin from the next method
         String sea = "mystic";
         log(sea); // your answer? => mystic
-        // TODO yuukimatsuo testtesttest (2022/03/11)
+        // done yuukimatsuo testtesttest (2022/03/11)
     }
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
@@ -49,7 +49,7 @@ public class Step01VariableTest extends PlainTestCase {
         String dstore = "mai";
         sea = sea + land + piari + ":" + dstore;
         log(sea); // your answer? =>mystic8:mai(x)=>mystic8null:mai(o)
-        // TODO yuukimatsuo nullも表示されるんですね。。。 (2022/03/11)
+        // done yuukimatsuo nullも表示されるんですね。。。 (2022/03/11)
     }
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
@@ -59,8 +59,9 @@ public class Step01VariableTest extends PlainTestCase {
         sea = land;
         land = land + "'s dreams";
         log(sea); // your answer? => oneman(o)
-        // TODO TODOって_TODOの後どのキーを押すんでしたっけ。。。？(2022/05/13)
-        // TODO 実行はCtrl+0 (2022/05/13)
+        // done TODOって_TODOの後どのキーを押すんでしたっけ。。。？(2022/05/13)
+        // done 実行はCtrl+0 (2022/05/13)
+        // done yuukimatsuo ctr+space (2022/06/03)
     }
 
     /** Same as the previous method question. (前のメソッドの質問と同じ) */
@@ -80,7 +81,8 @@ public class Step01VariableTest extends PlainTestCase {
         sea = land.add(new BigDecimal(1)); //416
         sea.add(new BigDecimal(1)); //416+1
         log(sea); // your answer? => 417(x) =>416(o)
-        // TODO 。。。？(2022/05/13)
+        // done 。。。？(2022/05/13)
+        // 戻り値を代入していないから!
     }
 
     // ===================================================================================
@@ -125,7 +127,7 @@ public class Step01VariableTest extends PlainTestCase {
         instanceBroadway = "bigband";
         ++instanceDockside;
         instanceMagiclamp = "burn";
-        // TODO ↑この関数内でlogしてたらburnですか？(2022/05/13)
+        // done ↑この関数内でlogしてたらburnですか？(2022/05/13)
     }
 
     // ===================================================================================
@@ -174,13 +176,16 @@ public class Step01VariableTest extends PlainTestCase {
         int land = 415;
         helpMethodArgumentVariable(sea, land);
         log(sea); // your answer? => habor416(x) => harbor(o)
+        // done yuukimatsuo  (2022/05/13)
     }
 
     private void helpMethodArgumentVariable(StringBuilder sea, int land) {
         ++land;//416
         String seaStr = sea.toString(); // is "harbor"
         sea = new StringBuilder(seaStr).append(land);//harbor416...?
-        // TODO ↑読み解けなかったです、、、(2022/05/13)
+        // done ↑読み解けなかったです、、、(2022/05/13)
+        // done ＃185でnewしているので、seaは別のインスタンス（新しくできた二件目の家）を指すように上書きされただけ、
+        // done　appendされたのは二件目の家なので、Ttestの方ではあたいは書き変わっていない
     }
 
     // ===================================================================================
@@ -202,8 +207,19 @@ public class Step01VariableTest extends PlainTestCase {
      * o すべての変数をlog()でカンマ区切りの文字列で表示
      * </pre>
      */
+    private int instanceVal;
+
     public void test_variable_writing() {
         // define variables here
+        //        StringBuilder sea = new StringBuilder("mystic");
+        String sea = "mystic";
+        Integer land = null;
+        //        BigDecimal piari = new BigDecimal();
+        //        int piari; //???????
+        int piari = instanceVal;//これであっているんか、、？
+
+        log(sea, land, piari);//????
+
     }
 
     // ===================================================================================
