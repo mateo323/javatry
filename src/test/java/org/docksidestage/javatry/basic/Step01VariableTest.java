@@ -207,19 +207,19 @@ public class Step01VariableTest extends PlainTestCase {
      * o すべての変数をlog()でカンマ区切りの文字列で表示
      * </pre>
      */
-    private int instanceVal;
+    private int instanceVal; //private はあってもOK
 
     public void test_variable_writing() {
         // define variables here
-        //        StringBuilder sea = new StringBuilder("mystic");
+        //StringBuilder sea = new StringBuilder("mystic");
         String sea = "mystic";
         Integer land = null;
         //        BigDecimal piari = new BigDecimal();
         //        int piari; //???????
-        int piari = instanceVal;//これであっているんか、、？
+        int piari = instanceVal;//これであっているんか、、？→合っている。関数の外で宣言すればそれがインスタンス変数
 
         log(sea, land, piari);//????
-
+        log(sea + "," + land + "," + piari);
     }
 
     // ===================================================================================
